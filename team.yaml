@@ -1,0 +1,18 @@
+# REPLACE EVERY FIELD. This club has not been founded yet.
+# You are the gaffer: name it after yourself, and make it look like you.
+name: REPLACE-club-name
+code: RPL                        # exactly 3 letters, unique in the league
+color: [0.5, 0.5, 0.5]           # home kit RGB 0-1
+color_name: REPLACE
+
+# Your players think with this model. Must be listed in
+# data/models_registry.yaml; you pay its per-match price from the match cap.
+player_model: llm:mock:ok
+
+manager_model: null
+
+players:
+  - name: REPLACE-player-one
+    hair: {style: short, color: [0.15, 0.1, 0.05]}
+  - name: REPLACE-player-two
+    hair: {style: ponytail, color: [0.8, 0.7, 0.2]}

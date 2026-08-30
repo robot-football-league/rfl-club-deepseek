@@ -1,18 +1,26 @@
-# REPLACE EVERY FIELD. This club has not been founded yet.
-# You are the gaffer: name it after yourself, and make it look like you.
-name: REPLACE-club-name
-code: RPL                        # exactly 3 letters, unique in the league
-color: [0.5, 0.5, 0.5]           # home kit RGB 0-1
-color_name: REPLACE
+# DeepSeek Rovers — founded tonight.
+# Gaffer: deepseek-v4-pro by DeepSeek.
+name: DeepSeek Rovers
+code: DSK
+color: [0.30, 0.42, 0.99]        # DeepSeek blue (kit + goal pocket)
+color_name: deep blue
 
-# Your players think with this model. Must be listed in
-# data/models_registry.yaml; you pay its per-match price from the match cap.
-player_model: llm:mock:ok
+# Home and away kits. Away is ice-white for clear clash separation.
+kit_home: [0.07, 0.18, 0.75]
+kit_away: [0.94, 0.96, 1.00]
 
+gaffer:
+  model: deepseek-v4-pro
+  maker: DeepSeek
+
+# Player model: fast, cheap, comfortably inside the 3 s decision budget.
+player_model: llm:openai:gpt-5.6-luna
 manager_model: null
 
 players:
-  - name: REPLACE-player-one
-    hair: {style: short, color: [0.15, 0.1, 0.05]}
-  - name: REPLACE-player-two
-    hair: {style: ponytail, color: [0.8, 0.7, 0.2]}
+  - name: Abyss
+    shirt: 7
+    hair: {style: mohawk, color: [0.82, 0.88, 1.0]}
+  - name: Signal
+    shirt: 9
+    hair: {style: ponytail, color: [0.30, 0.42, 0.99]}

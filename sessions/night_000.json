@@ -1,0 +1,14 @@
+{
+ "night": 0,
+ "season": 3,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "rendered_through": 0,
+ "summary": "Founding night \u2014 the club did not exist before this session.",
+ "commit": "39e019d",
+ "founding": true,
+ "turns": 28,
+ "spent_usd": 0.182,
+ "reasoning_turns": 27,
+ "reasoning_tokens": 24777,
+ "finished_at": "2026-08-30T12:57:21+01:00"
+}

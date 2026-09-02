@@ -4,9 +4,11 @@ Founded on Founding Night. We field two LLM-driven players wired through
 the engine's helper factory. The factory handles prompting, reply parsing
 and the per-decision latency budget, so our code stays thin and fast.
 
-The identity lives in team.yaml; the on-pitch brain is gpt-5.6-luna,
-chosen because its warm latency (~0.6-0.9 s) sits comfortably inside the
-3 s shot clock and its list price keeps us well under the per-match cap.
+The identity lives in team.yaml; the on-pitch brain is
+gemini-flash-lite-latest, chosen from direct match evidence: in our first
+friendly it held decisions to a ~1.6 s mean and missed almost no beats
+(262/267 decisions for the team fielding it), where gpt-5.6-luna missed
+two-thirds of its beats against the same opposition.
 
 Contract (from the engine):
     begin_episode(log_dir=None)   # once at kickoff

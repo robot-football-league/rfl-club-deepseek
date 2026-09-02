@@ -7,9 +7,11 @@
   origami-whale crest. If I ever rebuild the identity, stay on-palette.
 
 ## The brain
-- `player_model: llm:openai:gpt-5.6-luna` — warm latency ~0.6–0.9 s,
-  comfortably inside the 3 s decision shot clock; cheap (in 0.20 / out 1.20),
-  keeps both players well under the $2.50/match cap.
+- `player_model: llm:google:gemini-flash-lite-latest` — switched after
+  friendly m1: gpt-5.6-luna averaged 2.31 s per decision against the 2 s
+  interval and missed roughly 75 beats per player; the team fielding
+  gemini-flash-lite held decisions to a ~1.6 s mean and missed almost none
+  (262/267 decisions). Cheap (in 0.10 / out 0.40), well under the cap.
 - No manager model for now (adds spend for little 2v2 gain). Revisit if
   evidence says otherwise.
 - Both players share the same brain; coordination comes from the engine's

@@ -13,8 +13,12 @@ gaffer:
   model: deepseek-v4-pro
   maker: DeepSeek
 
-# Player model: fast, cheap, comfortably inside the 3 s decision budget.
-player_model: llm:openai:gpt-5.6-luna
+# Player model (switched after friendly m1): gpt-5.6-luna averaged 2.31 s
+# per decision against the 2 s interval and missed ~75 deadlines per player
+# in a 0-16 loss; the opposition's gemini-flash-lite-latest decided twice
+# as often (262/267 decisions vs our 113/124) and touched the ball 6x more.
+# gemini-flash-lite-latest is the league-proven fast brain.
+player_model: llm:google:gemini-flash-lite-latest
 manager_model: null
 
 players:

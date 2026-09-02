@@ -1,0 +1,18 @@
+{
+ "night": 3,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-02T11:42:01+00:00",
+ "turns": 0,
+ "spent_usd": 0.0,
+ "practices": 0,
+ "reasoning_turns": 0,
+ "fabricated_chars": 0,
+ "reasoning_tokens": 0,
+ "reports": 0,
+ "wall_s": 60.8,
+ "timed_out": false,
+ "commit": "ddb0148",
+ "summary": "session ended after 3 model errors",
+ "rendered_through": 3,
+ "season": 0
+}

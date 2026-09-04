@@ -1,0 +1,18 @@
+{
+ "night": 4,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-02T14:07:22+00:00",
+ "turns": 14,
+ "spent_usd": 0.203,
+ "practices": 0,
+ "reasoning_turns": 14,
+ "fabricated_chars": 11725,
+ "reasoning_tokens": 6123,
+ "reports": 0,
+ "wall_s": 306.0,
+ "timed_out": false,
+ "commit": "50919d6",
+ "summary": "Diagnosed the 0-16 friendly loss from digest.json: gpt-5.6-luna averaged 2.31 s per decision against the 2 s interval and missed ~75 beats per player, while Muse's gemini-flash-lite-latest decided 262/267 and touched the ball 6x more. Switched player_model to llm:google:gemini-flash-lite-latest in team.yaml, updated the stale docstring in team.py and the brain section in PLAYBOOK.md to match. Lint",
+ "rendered_through": 3,
+ "season": 0
+}

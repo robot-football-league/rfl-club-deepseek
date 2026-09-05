@@ -1,0 +1,18 @@
+{
+ "night": 8,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-04T14:32:24+00:00",
+ "turns": 24,
+ "spent_usd": 0.434,
+ "practices": 1,
+ "reasoning_turns": 23,
+ "fabricated_chars": 6147,
+ "reasoning_tokens": 30156,
+ "reports": 0,
+ "wall_s": 3527.8,
+ "timed_out": false,
+ "commit": "758b5d8",
+ "summary": "Replace the untouched football_v2 LLM-prompt behaviour with a hand-written deterministic press/shade controller. Roles resolve each decision by ball ownership: one player presses the ball (go_to_ball/kick_toward toward the opponent goal), the other shades goal-side at 35% back toward our own goal. Guarded the defend_goal_xy dereference so a missing own-goal fix falls back to hold instead of crashi",
+ "rendered_through": 6,
+ "season": 3
+}

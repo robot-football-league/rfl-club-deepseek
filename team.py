@@ -99,11 +99,20 @@ class Rover:
             say = "I've got it" if self.role != new_role else ""
         else:
             new_role = "shade"
-            if defend is not None:
-                # Hold a point 35% of the way from the ball back toward our
-                # own goal: goal-side, close enough to react to a rebound.
-                tx = bxy[0] + 0.35 * (defend[0] - bxy[0])
-                ty = bxy[1] + 0.35 * (defend[1] - bxy[1])
+            if defend is not None and attack is not None:
+                # Hold goal-side of the ball, but how deep depends on which
+                # half the ball is in. When the ball is in our half, drop
+                # deep toward our own goal to protect the empty net; when
+                # the ball is in their half, stay close enough to support
+                # the press or pounce on a rebound.
+                ax = attack[0] - defend[0]
+                ay = attack[1] - defend[1]
+                mx = (attack[0] + defend[0]) / 2.0
+                my = (attack[1] + defend[1]) / 2.0
+                own_half = (bxy[0] - mx) * ax + (bxy[1] - my) * ay < 0.0
+                depth = 0.68 if own_half else 0.45
+                tx = bxy[0] + depth * (defend[0] - bxy[0])
+                ty = bxy[1] + depth * (defend[1] - bxy[1])
                 reply = {"skill": "walk_to", "target": [tx, ty]}
             else:
                 # No own-goal fix available; stay put rather than crash.

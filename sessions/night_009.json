@@ -1,0 +1,18 @@
+{
+ "night": 9,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-05T20:48:09+00:00",
+ "turns": 28,
+ "spent_usd": 0.549,
+ "practices": 1,
+ "reasoning_turns": 27,
+ "fabricated_chars": 10580,
+ "reasoning_tokens": 30874,
+ "reports": 0,
+ "wall_s": 1103.9,
+ "timed_out": false,
+ "commit": "b339f33",
+ "summary": "Deepened the shade role's goal-side hold position: 0.68 of the way from ball to our own goal when the ball is in our half, 0.45 when in the opponent half (computed via the attack/defend goal axis midpoint). Kept the deterministic no-LLM build; lint CLEAR. No practice spent on this change.",
+ "rendered_through": 11,
+ "season": 3
+}

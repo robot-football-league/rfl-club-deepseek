@@ -45,6 +45,7 @@ class Rover:
         ball = det.get("ball") if isinstance(det, dict) else None
         selfp = obs.get("self") or {}
         you = obs.get("you") or {}
+        t_left = obs.get("time_remaining_s")
 
         my_pos = _pt(selfp.get("field_xy"))
         attack = _pt(you.get("attack_goal_xy"))
@@ -93,10 +94,18 @@ class Rover:
 
         if press:
             new_role = "press"
-            # go_to_ball approaches the correct side (orbiting if needed)
-            # and drives the ball at the opponent goal.
-            reply = {"skill": "go_to_ball"}
-            say = "I've got it" if self.role != new_role else ""
+            # Near the buzzer: strike at goal rather than dribble. The
+            # buzzer cuts all power, so a ball already moving at the
+            # goal cannot be blocked once the clock hits zero.
+            if (t_left is not None and t_left <= 3.0 and my_d <= 2.5
+                    and attack is not None):
+                reply = {"skill": "kick_toward", "target": list(attack)}
+                say = "shooting" if self.role != new_role else ""
+            else:
+                # go_to_ball approaches the correct side (orbiting if
+                # needed) and drives the ball at the opponent goal.
+                reply = {"skill": "go_to_ball"}
+                say = "I've got it" if self.role != new_role else ""
         else:
             new_role = "shade"
             if defend is not None and attack is not None:

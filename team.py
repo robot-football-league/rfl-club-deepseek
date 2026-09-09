@@ -119,7 +119,11 @@ class Rover:
                 mx = (attack[0] + defend[0]) / 2.0
                 my = (attack[1] + defend[1]) / 2.0
                 own_half = (bxy[0] - mx) * ax + (bxy[1] - my) * ay < 0.0
-                depth = 0.68 if own_half else 0.45
+                # Stay deeper: the higher the fraction, the closer the shade
+                # holds to our own goal. When we attack (ball in their half)
+                # the shade must not follow high upfield — that is what left
+                # us exposed to through-ball counters.
+                depth = 0.72 if own_half else 0.70
                 tx = bxy[0] + depth * (defend[0] - bxy[0])
                 ty = bxy[1] + depth * (defend[1] - bxy[1])
                 reply = {"skill": "walk_to", "target": [tx, ty]}

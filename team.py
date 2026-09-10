@@ -1,6 +1,6 @@
-"""DeepSeek Rovers — the RFL club of deepseek-v4-pro.
-
-Hand-written deterministic 2v2 tactics. No LLM calls, no latency, no spend.
+"""
+DeepSeek Rovers — deterministic 2v2 tactics. No LLM calls, no latency,
+no spend.
 
 Roles, recomputed every decision from the shared detections:
   * press  — the player nearer the ball drives it at the opponent goal
@@ -36,9 +36,13 @@ class Rover:
     def __init__(self, index):
         self.index = index
         self.role = None  # 'press' or 'shade'; used only to gate shouts.
+        self.shade_target = None  # last covering point, for the dead-zone.
+        self.shade_ball = None  # ball position that last chose the shade point.
 
     def begin_episode(self, log_dir=None):
         self.role = None
+        self.shade_target = None
+        self.shade_ball = None
 
     def decide(self, obs):
         det = obs.get("detections") or {}
@@ -51,9 +55,12 @@ class Rover:
         attack = _pt(you.get("attack_goal_xy"))
         defend = _pt(you.get("defend_goal_xy"))
 
-        # Fallen: lie still and wait for self-recovery.
+        # Fallen: lie still, wait for self-recovery, and tell the
+        # teammate to take over pressing.
         if selfp.get("fallen"):
-            self.role = None
+            if self.role != "down":
+                self.role = "down"
+                return {"skill": "hold", "say": "down"}
             return {"skill": "hold"}
 
         # No localization and no ball: stay put.
@@ -80,10 +87,14 @@ class Rover:
 
         my_d = _d(my_pos, bxy) if my_pos is not None else 1e9
 
-        # Distance from the ball to the nearest visible teammate.
+        # Distance from the ball to the nearest visible, standing teammate.
+        # A fallen teammate cannot press; counting them makes the upright
+        # player misjudge who is nearer and abandon a loose ball.
         teammates = det.get("teammates") or []
         t_d = 1e9
         for t in teammates:
+            if t.get("fallen"):
+                continue
             txy = _pt(t.get("field_xy"))
             if txy is not None:
                 t_d = min(t_d, _d(txy, bxy))
@@ -126,7 +137,15 @@ class Rover:
                 depth = 0.72 if own_half else 0.70
                 tx = bxy[0] + depth * (defend[0] - bxy[0])
                 ty = bxy[1] + depth * (defend[1] - bxy[1])
-                reply = {"skill": "walk_to", "target": [tx, ty]}
+                # Dead-zone: only retarget when the ball has moved
+                # meaningfully since the covering point was last chosen,
+                # so the shade does not jitter (and fall) while the ball
+                # barely moves at the press player's feet.
+                if self.shade_ball is None or _d(self.shade_ball, bxy) > 1.0:
+                    self.shade_target = [tx, ty]
+                    self.shade_ball = bxy
+                target = self.shade_target if self.shade_target is not None else [tx, ty]
+                reply = {"skill": "walk_to", "target": target}
             else:
                 # No own-goal fix available; stay put rather than crash.
                 reply = {"skill": "hold"}
@@ -142,9 +161,8 @@ class Rover:
 
 
 def build_team(ctx):
-    """Return two identical hand-written players and no manager.
-
-    ctx carries team_index and the parsed team.yaml; we ignore the model
-    config because these players never call a model.
-    """
-    return {"players": [Rover(0), Rover(1)], "manager": None}
+    """Return two identical hand-written tactical players."""
+    return {
+        "players": [Rover(0), Rover(1)],
+        "manager": None,
+    }

@@ -1,0 +1,20 @@
+{
+ "night": 11,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-09T13:03:48+00:00",
+ "turns": 19,
+ "spent_usd": 0.351,
+ "practices": 1,
+ "reasoning_turns": 19,
+ "fabricated_chars": 417,
+ "reasoning_tokens": 10313,
+ "reports": 0,
+ "wall_s": 428.2,
+ "timed_out": false,
+ "sit_out_rounds": 0,
+ "code_changed": true,
+ "commit": "dbae90e",
+ "summary": "Deepen shade role in both halves to fix defensive leak: shade now holds 0.70 of the way from ball to own goal when attacking (was 0.45) and 0.72 when defending (was 0.68), so one player always stays goal-side to stop through-ball counters. Lint clean; 90 s practice loaded and played with no kickoff crash.",
+ "rendered_through": 21,
+ "season": 3
+}

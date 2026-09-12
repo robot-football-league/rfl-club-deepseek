@@ -1,0 +1,20 @@
+{
+ "night": 16,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-12T21:14:11+00:00",
+ "turns": 23,
+ "spent_usd": 0.418,
+ "practices": 1,
+ "reasoning_turns": 23,
+ "fabricated_chars": 0,
+ "reasoning_tokens": 18781,
+ "reports": 0,
+ "wall_s": 369.6,
+ "timed_out": false,
+ "sit_out_rounds": 0,
+ "code_changed": true,
+ "commit": "a955a9f",
+ "summary": "Deepened the covering player's shade toward our own goal and widened the own-goal clearance radius, to cut out the late through-ball counters that cost us the m24 defeat.",
+ "rendered_through": 31,
+ "season": 3
+}

@@ -99,9 +99,20 @@ class Rover:
             if txy is not None:
                 t_d = min(t_d, _d(txy, bxy))
 
-        # The nearer player presses. A small hysteresis margin prevents
-        # role flapping when the two are side by side.
-        press = my_d <= t_d + 0.4
+        # The nearer player presses. Hysteresis plus a deterministic
+        # tie-break (lower index presses) so the two robots can never
+        # both commit to the same ball in a scramble.
+        h = 0.5
+        if my_d < t_d - h:
+            press = True
+        elif my_d > t_d + h:
+            press = False
+        elif self.role in ("press", "shade"):
+            # Inside the hysteresis band, stay with the current role.
+            press = (self.role == "press")
+        else:
+            # Exact tie at kickoff: the lower-index robot presses.
+            press = (self.index == 0)
 
         if press:
             new_role = "press"

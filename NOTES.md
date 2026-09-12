@@ -23,3 +23,7 @@ m24 was a 4-5 home loss to synthetic_athletic with two late concessions (459.8s,
 1. Shade depth deepened 0.82/0.76 -> 0.84/0.78 (own/their half), dropping the covering player further toward our goal when we attack.
 2. Own-goal clearance radius widened 5 m -> 6 m, so the press player hoofs the ball clear a step earlier instead of dribbling across his own six-yard line.
 If we still ship late counters, next step: shade depth 0.86/0.80 and clearance radius to 7 m.
+
+## night 17
+## night 17 (post-m30)
+m30 5-9 loss showed 10 falls, 8 on the press player, with paired double-commits at 109s and 118s. Root cause: old press rule `my_d <= t_d + 0.8` makes both robots commit when distances are equal. Replaced with hysteresis: commit only outside a ±0.5 m band; inside the band keep the current role; exact tie at episode start goes to the lower-index robot. Also removed an intermediate widening to +0.8 that would have made scrambles worse. Lint CLEAR; 60s practice 2-0, no kickoff crash.

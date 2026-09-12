@@ -134,14 +134,14 @@ class Rover:
                 # holds to our own goal. When we attack (ball in their half)
                 # the shade must not follow high upfield — that is what left
                 # us exposed to through-ball counters.
-                depth = 0.72 if own_half else 0.70
+                depth = 0.78 if own_half else 0.70
                 tx = bxy[0] + depth * (defend[0] - bxy[0])
                 ty = bxy[1] + depth * (defend[1] - bxy[1])
                 # Dead-zone: only retarget when the ball has moved
                 # meaningfully since the covering point was last chosen,
                 # so the shade does not jitter (and fall) while the ball
                 # barely moves at the press player's feet.
-                if self.shade_ball is None or _d(self.shade_ball, bxy) > 1.0:
+                if self.shade_ball is None or _d(self.shade_ball, bxy) > 1.5:
                     self.shade_target = [tx, ty]
                     self.shade_ball = bxy
                 target = self.shade_target if self.shade_target is not None else [tx, ty]

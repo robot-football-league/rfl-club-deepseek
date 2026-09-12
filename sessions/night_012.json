@@ -1,0 +1,20 @@
+{
+ "night": 12,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-10T21:52:30+00:00",
+ "turns": 27,
+ "spent_usd": 0.57,
+ "practices": 0,
+ "reasoning_turns": 27,
+ "fabricated_chars": 803,
+ "reasoning_tokens": 40770,
+ "reports": 0,
+ "wall_s": 1678.3,
+ "timed_out": false,
+ "sit_out_rounds": 0,
+ "code_changed": true,
+ "commit": "0693e1a",
+ "summary": "Tightened the 2v2 defence: the covering player now holds a stable goal-side point with a dead-zone instead of over-correcting to every ball movement, and when a teammate goes down the standing robot immediately takes over the chase \u2014 plus our presser strikes at goal in the last seconds before the buzzer, when nobody can block a moving ball.",
+ "rendered_through": 26,
+ "season": 3
+}

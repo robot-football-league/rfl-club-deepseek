@@ -1,0 +1,20 @@
+{
+ "night": 15,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-12T19:34:11+00:00",
+ "turns": 27,
+ "spent_usd": 0.51,
+ "practices": 1,
+ "reasoning_turns": 26,
+ "fabricated_chars": 0,
+ "reasoning_tokens": 23343,
+ "reports": 0,
+ "wall_s": 413.1,
+ "timed_out": false,
+ "sit_out_rounds": 0,
+ "code_changed": true,
+ "commit": "8a5a64f",
+ "summary": "Deepened the covering player's shade (0.82 own half / 0.76 their half) to sit closer to our own goal when we attack, cutting off the late through-ball counters that cost us m18, and added a goal-line clearance: when the presser is on a ball within 5m of our own goal he hoofs it upfield instead of dribbling across his own six-yard line. Lint clean, 60s practice played clean.",
+ "rendered_through": 31,
+ "season": 3
+}

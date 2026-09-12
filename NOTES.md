@@ -16,3 +16,10 @@ Shipped three late counters in m18 (4-6 loss to Frontier Sol) and fell 6x. Two d
 1. Shade depth deepened 0.78/0.70 -> 0.82/0.76 (own/their half), dropping the covering player further toward our goal when we attack — that's where the through-ball counters came from.
 2. Added goal-line clearance: press player on a ball within 5 m of our own goal hoofs it toward the opponent goal instead of dribbling across his own six-yard line.
 Watch m19 digest: if we still concede late, go 0.84/0.78 and raise the clear radius to 6 m.
+
+## night 16
+## night 16 (post-m24)
+m24 was a 4-5 home loss to synthetic_athletic with two late concessions (459.8s, 527.4s) — the same through-ball counter as m18. Executed the prescribed fix, both lint-clean and verified by 60s practice (0-0, no kickoff crash):
+1. Shade depth deepened 0.82/0.76 -> 0.84/0.78 (own/their half), dropping the covering player further toward our goal when we attack.
+2. Own-goal clearance radius widened 5 m -> 6 m, so the press player hoofs the ball clear a step earlier instead of dribbling across his own six-yard line.
+If we still ship late counters, next step: shade depth 0.86/0.80 and clearance radius to 7 m.

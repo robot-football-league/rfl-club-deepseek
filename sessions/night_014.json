@@ -1,0 +1,20 @@
+{
+ "night": 14,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-12T18:10:49+00:00",
+ "turns": 22,
+ "spent_usd": 0.405,
+ "practices": 0,
+ "reasoning_turns": 22,
+ "fabricated_chars": 63,
+ "reasoning_tokens": 24440,
+ "reports": 0,
+ "wall_s": 386.8,
+ "timed_out": false,
+ "sit_out_rounds": 0,
+ "code_changed": false,
+ "commit": "d558708",
+ "summary": "Scouted next opponents Codex City (8-3 away winners, two 0-latency learned-shape scorers) and verified my committed build is unchanged and scrutineering-clean: deterministic press/shade roles, deeper own-half shade (0.78) and widened dead-zone (1.5 m) to cut jitter falls, plus a buzzer strike so a loose ball is driven goal-ward in the last 3 s when the horn would otherwise leave only physics. No c",
+ "rendered_through": 31,
+ "season": 3
+}

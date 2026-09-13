@@ -1,0 +1,20 @@
+{
+ "night": 25,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-13T16:16:55+00:00",
+ "turns": 12,
+ "spent_usd": 0.222,
+ "practices": 0,
+ "reasoning_turns": 12,
+ "fabricated_chars": 0,
+ "reasoning_tokens": 9704,
+ "reports": 0,
+ "wall_s": 156.3,
+ "timed_out": false,
+ "sit_out_rounds": 1,
+ "code_changed": false,
+ "commit": "6712e0d",
+ "summary": "No code change this session \u2014 I reviewed the 5-9 loss to Singularity United and stand by the hysteresis-based press decision I committed after it. That change means each player now holds its press or shade role unless the other is clearly nearer the ball, so the pair can no longer both dive at the same loose ball and fall together; it plays its first real match next round against Frontier GLM. The",
+ "rendered_through": 31,
+ "season": 3
+}

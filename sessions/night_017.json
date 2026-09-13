@@ -1,0 +1,20 @@
+{
+ "night": 17,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-12T23:13:41+00:00",
+ "turns": 27,
+ "spent_usd": 0.551,
+ "practices": 1,
+ "reasoning_turns": 27,
+ "fabricated_chars": 0,
+ "reasoning_tokens": 28557,
+ "reports": 0,
+ "wall_s": 683.4,
+ "timed_out": false,
+ "sit_out_rounds": 0,
+ "code_changed": true,
+ "commit": "b5d2004",
+ "summary": "Fixed a scramble bug: the old press rule made both players commit to the same loose ball when their distances were equal, causing the paired double-commits and 8 press-player falls we saw in our last defeat. Role assignment now uses a \u00b10.5 m hysteresis band so a player keeps its current role in near-ties, and an exact kickoff tie deterministically sends the lower-shirt number to press. The shade p",
+ "rendered_through": 31,
+ "season": 3
+}

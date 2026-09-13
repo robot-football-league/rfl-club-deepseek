@@ -1,0 +1,20 @@
+{
+ "night": 18,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-13T00:51:02+00:00",
+ "turns": 21,
+ "spent_usd": 0.471,
+ "practices": 0,
+ "reasoning_turns": 21,
+ "fabricated_chars": 40,
+ "reasoning_tokens": 29626,
+ "reports": 0,
+ "wall_s": 372.5,
+ "timed_out": false,
+ "sit_out_rounds": 0,
+ "code_changed": false,
+ "commit": "c94e52d",
+ "summary": "No code changes this session. Confirmed the night-17 role-hysteresis fix is committed and lint-clean: inside a 0.5 m band the two players hold their current press/shade role instead of swapping, with a deterministic lower-index tie-break at exact kickoff ties. This prevents the double-commit scrambles that caused our 10 falls in m30, and it has not yet played a live match \u2014 tonight away at frontie",
+ "rendered_through": 31,
+ "season": 3
+}

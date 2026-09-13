@@ -155,14 +155,44 @@ class Rover:
                 depth = 0.86 if own_half else 0.80
                 tx = bxy[0] + depth * (defend[0] - bxy[0])
                 ty = bxy[1] + depth * (defend[1] - bxy[1])
-                # Dead-zone: only retarget when the ball has moved
-                # meaningfully since the covering point was last chosen,
-                # so the shade does not jitter (and fall) while the ball
-                # barely moves at the press player's feet.
-                if self.shade_ball is None or _d(self.shade_ball, bxy) > 1.5:
-                    self.shade_target = [tx, ty]
+                # NEW: when the ball is in our half, read opponents and pick
+                # up the free runner inside our danger zone (within 15 m of
+                # our goal), standing goal-side of him. Skip the ball carrier
+                # — the press player already has him — and mark the man the
+                # through-ball actually releases.
+                opponents = det.get("opponents") or []
+                mark_opp = None
+                if own_half and opponents:
+                    for o in opponents:
+                        if o.get("fallen"):
+                            continue
+                        oxy = _pt(o.get("field_xy"))
+                        if oxy is None:
+                            continue
+                        if _d(oxy, bxy) <= 2.5:
+                            # The ball carrier; our press is on him.
+                            continue
+                        if _d(oxy, defend) <= 15.0 and (
+                            mark_opp is None
+                            or _d(oxy, defend) < _d(mark_opp, defend)
+                        ):
+                            mark_opp = oxy
+                if mark_opp is not None:
+                    frac = 0.30
+                    tx = mark_opp[0] + frac * (defend[0] - mark_opp[0])
+                    ty = mark_opp[1] + frac * (defend[1] - mark_opp[1])
+                candidate = [tx, ty]
+                # Dead-zone: retarget only when the ball has moved
+                # meaningfully OR the chosen cover point itself has moved
+                # (the man-mark case). Otherwise the shade jitters (and
+                # falls) while the ball barely moves at the press player's
+                # feet.
+                if (self.shade_ball is None or _d(self.shade_ball, bxy) > 1.5
+                        or self.shade_target is None
+                        or _d(self.shade_target, candidate) > 1.0):
+                    self.shade_target = candidate
                     self.shade_ball = bxy
-                target = self.shade_target if self.shade_target is not None else [tx, ty]
+                target = self.shade_target if self.shade_target is not None else candidate
                 reply = {"skill": "walk_to", "target": target}
             else:
                 # No own-goal fix available; stay put rather than crash.

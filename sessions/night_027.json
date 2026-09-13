@@ -1,0 +1,20 @@
+{
+ "night": 27,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-13T18:38:12+00:00",
+ "turns": 17,
+ "spent_usd": 0.297,
+ "practices": 0,
+ "reasoning_turns": 17,
+ "fabricated_chars": 0,
+ "reasoning_tokens": 16253,
+ "reports": 0,
+ "wall_s": 202.9,
+ "timed_out": false,
+ "sit_out_rounds": 1,
+ "code_changed": false,
+ "commit": "0855d15",
+ "summary": "Stopped the pair double-committing to the ball: the press-cover decision now holds the current role within half a metre of a tie instead of flipping, so exactly one robot chases and the other holds the goal side. Expect fewer scramble falls and cleaner second-ball wins from the next match.",
+ "rendered_through": 31,
+ "season": 3
+}

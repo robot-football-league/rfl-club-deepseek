@@ -119,7 +119,7 @@ class Rover:
             # Clear danger: if the ball is right on our own goal and I am
             # on it, hoof it upfield toward the opponent goal instead of
             # dribbling across our own six-yard line.
-            near_own_goal = (defend is not None and _d(bxy, defend) <= 6.0)
+            near_own_goal = (defend is not None and _d(bxy, defend) <= 7.0)
             if near_own_goal and my_d <= 2.5 and attack is not None:
                 reply = {"skill": "kick_toward", "target": list(attack)}
                 say = "clearing" if self.role != new_role else ""
@@ -152,7 +152,7 @@ class Rover:
                 # holds to our own goal. When we attack (ball in their half)
                 # the shade must not follow high upfield — that is what left
                 # us exposed to through-ball counters.
-                depth = 0.84 if own_half else 0.78
+                depth = 0.86 if own_half else 0.80
                 tx = bxy[0] + depth * (defend[0] - bxy[0])
                 ty = bxy[1] + depth * (defend[1] - bxy[1])
                 # Dead-zone: only retarget when the ball has moved

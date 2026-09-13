@@ -1,0 +1,20 @@
+{
+ "night": 19,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-13T02:33:37+00:00",
+ "turns": 19,
+ "spent_usd": 0.379,
+ "practices": 0,
+ "reasoning_turns": 19,
+ "fabricated_chars": 68,
+ "reasoning_tokens": 21517,
+ "reports": 0,
+ "wall_s": 304.2,
+ "timed_out": false,
+ "sit_out_rounds": 1,
+ "code_changed": false,
+ "commit": "998c6bf",
+ "summary": "Since the m30 defeat the press role holds until one robot is clearly nearer the loose ball (a half-metre buffer, lower shirt wins a dead tie) instead of both committing at equal distance \u2014 the double-commits that opened our goal and caused most of our 17 falls. The covering player already sits deeper toward our own goal and hoofs balls clear off our six-yard line. No other changes: the new press l",
+ "rendered_through": 31,
+ "season": 3
+}

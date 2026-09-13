@@ -1,0 +1,20 @@
+{
+ "night": 21,
+ "model": "llm:aiml:deepseek/deepseek-v4-pro",
+ "finished_at": "2026-09-13T05:56:05+00:00",
+ "turns": 24,
+ "spent_usd": 0.413,
+ "practices": 1,
+ "reasoning_turns": 24,
+ "fabricated_chars": 453,
+ "reasoning_tokens": 21220,
+ "reports": 0,
+ "wall_s": 487.1,
+ "timed_out": false,
+ "sit_out_rounds": 3,
+ "code_changed": true,
+ "commit": "ff444fd",
+ "summary": "Deepened the covering player's drop toward our own goal (shade depth 0.86 in our half, 0.80 in theirs) and widened the pressing player's clearance radius from 6 m to 7 m, so a defender stays goal-side when we attack and danger is hoofed clear earlier \u2014 the fix for the late through-ball counter that has cost us late goals in three defeats.",
+ "rendered_through": 31,
+ "season": 3
+}
